@@ -37,14 +37,17 @@ const Pascal = () => {
   return pascalCaseString;
 };
 
-input.addEventListener("input", () => {
+const updateTextTransformations = () => {
   let value = input.value.trim();
 
   UpperCase.textContent = value.toUpperCase();
   LowerCase.textContent = value.toLowerCase();
   SnakeCase.textContent = value.toLowerCase().replaceAll(" ", "_");
   KebabCase.textContent = value.toLowerCase().replaceAll(" ", "-");
-  TrimCase.textContent = value.trim().replaceAll(" ", "");
+  TrimCase.textContent = value.replaceAll(" ", "");
   CamelCase.textContent = Camel();
   PascalCase.textContent = Pascal();
-});
+};
+
+window.addEventListener("DOMContentLoaded", updateTextTransformations);
+input.addEventListener("input", updateTextTransformations);
