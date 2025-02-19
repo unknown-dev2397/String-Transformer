@@ -6,6 +6,8 @@ let SnakeCase = document.querySelector(".Snake");
 let KebabCase = document.querySelector(".Kebab");
 let TrimCase = document.querySelector(".Trim");
 
+let logo = document.querySelector(".logo");
+
 let input = document.querySelector(".input");
 
 const Camel = () => {
@@ -51,3 +53,8 @@ const updateTextTransformations = () => {
 
 window.addEventListener("DOMContentLoaded", updateTextTransformations);
 input.addEventListener("input", updateTextTransformations);
+
+logo.addEventListener("click", () => {
+  document.location.href =
+    "https://github.com/unknown-dev2397/String-Transformer";
+});
