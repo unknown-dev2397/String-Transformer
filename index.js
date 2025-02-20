@@ -6,9 +6,8 @@ let SnakeCase = document.querySelector(".Snake");
 let KebabCase = document.querySelector(".Kebab");
 let TrimCase = document.querySelector(".Trim");
 
-let logo = document.querySelector(".logo");
-
 let input = document.querySelector(".input");
+let logo = document.querySelector(".logo");
 
 const Camel = () => {
   let value = input.value;
@@ -44,8 +43,8 @@ const updateTextTransformations = () => {
 
   UpperCase.textContent = value.toUpperCase();
   LowerCase.textContent = value.toLowerCase();
-  SnakeCase.textContent = value.toLowerCase().replaceAll(" ", "_");
-  KebabCase.textContent = value.toLowerCase().replaceAll(" ", "-");
+  SnakeCase.textContent = value.replaceAll(/\s+/g, "_");
+  KebabCase.textContent = value.replaceAll(/\s+/g, "-");
   TrimCase.textContent = value.replaceAll(" ", "");
   CamelCase.textContent = Camel();
   PascalCase.textContent = Pascal();
